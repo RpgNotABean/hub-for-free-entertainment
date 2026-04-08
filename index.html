@@ -1,251 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Ultimate Free Hub - Emulators, Games, Tools & Media (2026)</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #eee;
-      margin: 0;
-      padding: 0 20px 20px 220px; /* Space for sidebar */
-      line-height: 1.6;
-    }
-    header {
-      text-align: center;
-      padding: 30px 0;
-      background: linear-gradient(to right, #8e44ad, #3498db);
-      border-radius: 10px;
-      margin-bottom: 30px;
-    }
-    h1, h2, h3 {
-      margin: 0.4em 0;
-    }
-    section {
-      background: #1a1a1a;
-      padding: 20px;
-      margin: 20px 0;
-      border-radius: 10px;
-      border: 1px solid #444;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      margin: 12px 0;
-    }
-    a {
-      color: #1e90ff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    a:hover {
-      color: #ffdd57;
-      text-decoration: underline;
-    }
-    .category {
-      font-weight: bold;
-      color: #ffdd57;
-      margin-right: 8px;
-    }
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: #888;
-      font-size: 0.9em;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Ultimate Free Hub</title>
 
-    /* Sidebar Styles */
-    #sidebar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 200px;
-      height: 100%;
-      background: #1a1a1a;
-      border-right: 1px solid #444;
-      padding: 20px 10px;
-      overflow-y: auto;
-    }
-    #sidebar h3 {
-      margin-top: 0;
-      color: #ffdd57;
-    }
-    #sidebar ul {
-      padding: 0;
-    }
-    #sidebar li {
-      margin: 10px 0;
-    }
-    #sidebar a {
-      color: #eee;
-      display: block;
-      padding: 8px;
-      border-radius: 6px;
-    }
-    #sidebar a:hover {
-      background: #333;
-      color: #ffdd57;
-    }
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background: #111;
+  color: #eee;
+  margin: 0;
+  padding: 0 20px 20px 220px;
+}
 
-    @media (max-width: 768px) {
-      body { padding-left: 20px; }
-      #sidebar { position: static; width: auto; height: auto; border: none; }
-    }
-  </style>
+header {
+  text-align: center;
+  padding: 30px 0;
+  background: linear-gradient(to right, #8e44ad, #3498db);
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+section {
+  background: #1a1a1a;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: 1px solid #444;
+}
+
+a {
+  color: #1e90ff;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #ffdd57;
+}
+
+.category {
+  color: #ffdd57;
+}
+
+#sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background: #1a1a1a;
+  border-right: 1px solid #444;
+  padding: 20px 10px;
+}
+
+#sidebar a {
+  display: block;
+  padding: 8px;
+  border-radius: 6px;
+  color: #eee;
+}
+
+#sidebar a:hover {
+  background: #333;
+  color: #ffdd57;
+}
+
+/* Viewer */
+#viewer-container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 200px;
+  width: calc(100% - 200px);
+  height: 100%;
+  background: #000;
+  z-index: 999;
+}
+
+#viewer-topbar {
+  height: 40px;
+  background: #111;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  border-bottom: 1px solid #444;
+}
+
+#viewer-topbar button {
+  background: red;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#viewer-frame {
+  width: 100%;
+  height: calc(100% - 40px);
+  border: none;
+}
+</style>
 </head>
+
 <body>
+
 <div id="sidebar">
   <h3>Navigate</h3>
-  <ul>
-    <li><a href="#emulators">Retro Emulators & Browser Games</a></li>
-    <li><a href="#games">Free Online Games</a></li>
-    <li><a href="#tools">Cool Free Tools</a></li>
-    <li><a href="#media">Free Media Hub</a></li>
-  </ul>
+  <a href="#emulators">Emulators</a>
+  <a href="#games">Games</a>
+  <a href="#tools">Tools</a>
+  <a href="#media">Media</a>
 </div>
 
 <header>
   <h1>My Ultimate Free Hub</h1>
-  <p>Emulators • Online Games • Cool Tools • Free Media (Updated March 2026)</p>
-  <p>All links open in new tabs • Stay safe & prefer legal options!</p>
+  <p>Everything in one place</p>
 </header>
 
-<section id="emulators">
-  <h2>Retro Emulators & Browser Retro Games</h2>
-  <p>Play classic games right in your browser (no ROMs needed on these sites; some use public domain or licensed games):</p>
-  <ul>
-    <li><span class="category">[Browser Emulation]</span> <a href="https://classicgamezone.com/" target="_blank">ClassicGameZone</a> — NES, SNES, Genesis, N64, PS1, Arcade & more</li>
-    <li><span class="category">[Retro Collection]</span> <a href="https://retroachievements.org/" target="_blank">RetroAchievements</a> — Achievements tracking</li>
-    <li><span class="category">[Multi-system]</span> <a href="https://www.retroarch.com/" target="_blank">RetroArch</a> (download/web) — Full emulation powerhouse</li>
-    <li><span class="category">[Browser Arcade]</span> <a href="https://webrcade.com/" target="_blank">WebRcade</a> — Clean legit arcade</li>
-    <li><span class="category">[New Additions]</span> <a href="https://playclassic.games/" target="_blank">PlayClassic</a> — Browser classics collection</li>
-    <li><span class="category">[Browser]</span> <a href="https://emupedia.net/" target="_blank">Emupedia</a> — Emulated retro in browser</li>
-    <li><span class="category">[Multi]</span> <a href="https://archive.org/details/softwarelibrary" target="_blank">Internet Archive Emulation</a> — Vast in-browser old games/software</li>
-  </ul>
-</section>
+<!-- VIEWER -->
+<div id="viewer-container">
+  <div id="viewer-topbar">
+    <button onclick="closeViewer()">Close</button>
+  </div>
+  <iframe id="viewer-frame"></iframe>
+</div>
 
 <section id="games">
-  <h2>Free Online Games (No Download, Browser-Based)</h2>
-  <p>Huge libraries of modern + casual + MMO games playable instantly:</p>
-  <ul>
-    <li><a href="https://www.crazygames.com/" target="_blank">CrazyGames</a> — 4000+ games, no ads interruption</li>
-    <li><a href="https://www.addictinggames.com/" target="_blank">Addicting Games</a> — Thousands of fun titles</li>
-    <li><a href="https://www.agame.com/" target="_blank">AGame</a> — Adventures, puzzles, multiplayer</li>
-    <li><a href="https://playhop.com/" target="_blank">Playhop</a> — 20,000+ high-quality games</li>
-    <li><a href="https://itch.io/games/free/platform-web" target="_blank">itch.io Free Web Games</a> — Indie/experimental</li>
-    <li><a href="https://poki.com/" target="_blank">Poki</a> — Massive variety, mobile-optimized</li>
-    <li><a href="https://www.kongregate.com/" target="_blank">Kongregate</a> — Flash/HTML5 classics</li>
-    <li><a href="https://armorgames.com/" target="_blank">Armor Games</a> — Strategy/puzzle hub</li>
-    <li><a href="https://www.miniclip.com/" target="_blank">Miniclip</a> — Iconic like 8 Ball Pool</li>
-    <li><a href="https://www.newgrounds.com/games" target="_blank">Newgrounds</a> — User-submitted, mature options</li>
-    <!-- More additions -->
-    <li><a href="https://www.freetogame.com/browser/mmo" target="_blank">FreeToGame Browser MMOs</a> — Free browser MMORPGs (Forge of Empires, Elvenar, etc.)</li>
-    <li><a href="https://www.mmobomb.com/browsergames/mmorpg" target="_blank">MMOBomb Browser MMORPGs</a> — RuneScape, Flyff Universe, Hero Wars</li>
-    <li><a href="https://www.games-4-free.com/" target="_blank">Games-4-Free</a> — Strategy/browser online games</li>
-  </ul>
+<h2>Games</h2>
+<ul>
+  <li><a onclick="openViewer('https://www.crazygames.com/')">CrazyGames</a></li>
+  <li><a onclick="openViewer('https://poki.com/')">Poki</a></li>
+  <li><a onclick="openViewer('https://itch.io/games/free/platform-web')">itch.io</a></li>
+</ul>
 </section>
 
 <section id="tools">
-  <h2>Cool Free Online Tools & Utilities</h2>
-  <p>Productivity, converters, generators, AI helpers & more — all browser-based:</p>
-  <ul>
-    <li><a href="https://toolpix.pythonanywhere.com/utility-tools" target="_blank">ToolPix</a> — Temp email, QR gen/scanner, password gen, notes & more</li>
-    <li><a href="https://www.canva.com/" target="_blank">Canva (free tier)</a> — Design graphics/videos</li>
-    <li><a href="https://www.remove.bg/" target="_blank">Remove.bg</a> — Instant BG remover</li>
-    <li><a href="https://www.iloveimg.com/" target="_blank">ILoveIMG</a> — Image compress/resize/convert</li>
-    <li><a href="https://www.pexels.com/" target="_blank">Pexels / Pixabay</a> — Free stock photos/videos</li>
-    <li><a href="https://notebooklm.google.com/" target="_blank">NotebookLM (Google)</a> — AI research assistant</li>
-    <!-- More additions -->
-    <li><a href="https://www.perplexity.ai/" target="_blank">Perplexity AI</a> — Free AI search/research</li>
-    <li><a href="https://www.photopea.com/" target="_blank">Photopea</a> — Free Photoshop-like editor in browser</li>
-    <li><a href="https://smallpdf.com/" target="_blank">Smallpdf</a> — PDF tools (compress, edit, convert)</li>
-    <li><a href="https://www.cooltext.com/" target="_blank">CoolText</a> — Logo/text generators</li>
-    <li><a href="https://app.diagrams.net/" target="_blank">diagrams.net (ex-draw.io)</a> — Free flowcharts/diagrams</li>
-  </ul>
+<h2>Tools</h2>
+<ul>
+  <li><a onclick="openViewer('https://www.canva.com/')">Canva</a></li>
+  <li><a onclick="openViewer('https://www.photopea.com/')">Photopea</a></li>
+</ul>
 </section>
 
 <section id="media">
-  <h2>Free Media Hub: Movies, TV, Anime, Manga, Games & More (March 2026)</h2>
-  <p>Legal/ad-supported first (safer, creator-supporting). Then unofficial/piracy-style (high-risk: ads/malware/legal/domain hops—use VPN, uBlock Origin, antivirus). Check r/Piracy, r/PiratedGames, fmhy.net for mirrors.</p>
-
-  <h3>Legal & Ad-Supported (Recommended - Safe & Stable)</h3>
-  <ul>
-    <li><a href="https://tubitv.com/" target="_blank">Tubi</a> — Huge movies/TV/anime library</li>
-    <li><a href="https://pluto.tv/" target="_blank">Pluto TV</a> — Live + on-demand</li>
-    <li><a href="https://www.plex.tv/" target="_blank">Plex</a> — Free content + personal media</li>
-    <li><a href="https://therokuchannel.roku.com/" target="_blank">The Roku Channel</a> — Movies/series/live</li>
-    <li><a href="https://www.crackle.com/" target="_blank">Crackle</a> — Classics & originals</li>
-    <li><a href="https://www.retrocrush.tv/" target="_blank">RetroCrush</a> — Retro/legal anime</li>
-    <!-- More legal additions -->
-    <li><a href="https://www.kanopy.com/" target="_blank">Kanopy</a> — Library card free (movies/docs/anime classics)</li>
-    <li><a href="https://www.hoopladigital.com/" target="_blank">Hoopla</a> — Library-linked free movies/TV/manga/anime</li>
-    <li><a href="https://play.google.com/store/apps/details?id=tv.xumo.play" target="_blank">Xumo Play</a> — Free live/on-demand</li>
-    <li><a href="https://www.sling.com/freestream" target="_blank">Sling Freestream</a> — Free channels/movies</li>
-    <li><a href="https://www.popcornflix.com/" target="_blank">Popcornflix</a> — Free movies/TV</li>
-  </ul>
-
-  <h3>Unofficial / Piracy-Style Sites (High Risk)</h3>
-
-  <p><strong>Movies & TV Streaming</strong></p>
-  <ul>
-    <li><a href="https://letflix.mom/" target="_blank">Letflix.mom</a></li>
-    <li><a href="https://sflix.to/" target="_blank">SFlix</a></li>
-    <li><a href="https://flixbaba.com/" target="_blank">Flixbaba</a></li>
-    <li><a href="https://soap2day.rs/" target="_blank">Soap2Day mirrors</a></li>
-    <!-- More -->
-    <li><a href="https://fmovies.to/" target="_blank">FMovies variants</a> — Often updated mirrors</li>
-  </ul>
-
-  <p><strong>Anime Streaming (Unofficial)</strong></p>
-  <ul>
-    <li><a href="https://hianime.to/" target="_blank">HiAnime</a></li>
-    <li><a href="https://aniwave.to/" target="_blank">AniWave (ex-9anime)</a></li>
-    <li><a href="https://aniwatchtv.to/" target="_blank">AniWatch</a></li>
-    <li><a href="https://gogoanime3.net/" target="_blank">Gogoanime</a></li>
-    <!-- More -->
-    <li><a href="https://animepahe.ru/" target="_blank">AnimePahe</a> — Lightweight streams</li>
-    <li><a href="https://4anime.gg/" target="_blank">4Anime</a> — Clean library</li>
-  </ul>
-
-  <p><strong>Manga Reading (Online Readers - Unofficial)</strong></p>
-  <ul>
-    <li><a href="https://mangafire.to/" target="_blank">Mangafire.to</a></li>
-    <li><a href="https://mangadex.org/" target="_blank">MangaDex</a> — Community-driven</li>
-    <li><a href="https://mangakakalot.com/" target="_blank">MangaKakalot</a></li>
-    <li><a href="https://manganelo.tv/" target="_blank">Manganelo</a></li>
-    <li><a href="https://mangasee123.com/" target="_blank">MangaSee</a></li>
-    <li><a href="https://asuracomics.gg/" target="_blank">Asura Scans</a> — Manhwa focus</li>
-    <li><a href="https://toonily.com/" target="_blank">Toonily</a> — Mature manhwa/manga</li>
-    <!-- More -->
-    <li><a href="https://mangaplaza.com/" target="_blank">MangaPlaza</a> — Some free chapters</li>
-    <li><a href="https://mangapark.net/" target="_blank">MangaPark</a> — Large collection</li>
-  </ul>
-
-  <p><strong>Game Piracy / Cracked / Repacks / Torrents (PC Focus - Very High Risk)</strong></p>
-  <ul>
-    <li><a href="https://fitgirl-repacks.site/" target="_blank">FitGirl Repacks</a> — Compressed cracked games</li>
-    <li><a href="https://dodi-repacks.site/" target="_blank">DODI Repacks</a> — Popular alternative repacker</li>
-    <li><a href="https://cs.rin.ru/forum/" target="_blank">CS.RIN.RU</a> — Best forum for cracks/fixes/discussions</li>
-    <li><a href="https://1337x.to/" target="_blank">1337x</a> — Verified torrents</li>
-    <li><a href="https://thepiratebay.org/" target="_blank">The Pirate Bay</a> — Classic torrent hub</li>
-    <li><a href="https://torrentgalaxy.to/" target="_blank">TorrentGalaxy</a> — Community comments</li>
-    <li><a href="https://skidrowreloaded.com/" target="_blank">Skidrow & RELOADED</a> — Scene news/cracks</li>
-    <!-- More -->
-    <li><a href="https://elamigos.site/" target="_blank">ElAmigos</a> — Repacks/multi-language</li>
-    <li><a href="https://crackhub.site/" target="_blank">CrackHub</a> — DDL for scene + repacks</li>
-  </ul>
-
-  <p><strong>Game Piracy Tips:</strong> Trusted repackers (FitGirl, DODI, ElAmigos) or CS.RIN.RU first. Use qBittorrent + verified torrents. Scan files. Avoid random DDL sites. Domains change—fmhy.net / reddit megathreads for updates.</p>
-
-  <p><strong>Overall Safety Reminder:</strong> Legal options (Steam sales, Epic freebies, Game Pass, library apps) are safer and support creators. Piracy risks fines, malware, ISP issues—use protection if needed.</p>
+<h2>Media</h2>
+<ul>
+  <li><a onclick="openViewer('https://tubitv.com/')">Tubi</a></li>
+  <li><a onclick="openViewer('https://pluto.tv/')">Pluto TV</a></li>
+</ul>
 </section>
 
-<footer>
-  <p>Created for fun • Last updated March 2026 • Bookmark & enjoy responsibly!</p>
-</footer>
+<script>
+function openViewer(url) {
+  const viewer = document.getElementById("viewer-container");
+  const frame = document.getElementById("viewer-frame");
+
+  frame.src = url;
+  viewer.style.display = "block";
+
+  // fallback if blocked
+  setTimeout(() => {
+    try {
+      if (!frame.contentWindow || frame.contentWindow.location.href === "about:blank") {
+        window.open(url, "_blank");
+        closeViewer();
+      }
+    } catch {
+      window.open(url, "_blank");
+      closeViewer();
+    }
+  }, 2000);
+}
+
+function closeViewer() {
+  document.getElementById("viewer-frame").src = "";
+  document.getElementById("viewer-container").style.display = "none";
+}
+</script>
+
 </body>
 </html>
